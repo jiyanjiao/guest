@@ -1,0 +1,1 @@
+print(''' SELECT  * FROM user where account = '%s' ''' %('jiyanjiao'))

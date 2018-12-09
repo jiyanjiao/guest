@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="zh-CN">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发布会管理</title>
+
+    <!--{% load staticfiles %}
+    <link href="{% static 'css/body.css' %}" rel="stylesheet">-->
+    <link href="{% static 'css/body.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div id="login">
+        <h1>发布会管理</h1>
+        <form method="post" action = "/login_action/">
+            <input type="text"  placeholder="请输入用户名" name="username"></input>
+            <input type="password"  placeholder="请输入密码" name="password"></input>
+            <br><div style="color:red">{{ input_error }}</div><br>
+            <!--输入用户名和密码错误时的提示-->
+            <!--<br><div style="color:red">{{error}}</div><br>-->
+
+            <button class="but" type="submit">登录</button>
+            <!--在表单中放置一个自动生成的令牌,通过这个令牌判断post请求是否来自同一个网站加入token是为了解决点击登录时的CSRF跨站请求伪造-->
+            {% csrf_token %}
+        </form>
+    </div>
+</body>
+</html>
