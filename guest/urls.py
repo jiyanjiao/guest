@@ -21,7 +21,13 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^index/', views.index),
     url(r'^login_action/', views.login_action),
-    url(r'^event_manage/', views.event_manage),#event_manage_role
-    url(r'^administrator/', views.administrator)
+    url(r'^event_manage/', views.event_manage),
+    url(r'^administrator/', views.administrator), #guest_manage
+    url(r'^guest_manage/', views.guest_manage), #搜索路径
+    url(r'^search_name/', views.search_name),#search_phone
+    url(r'^search_phone/', views.search_phone),#sign_index
+    url(r'^sign_index/(?P<event_id>[0-9]+)/$', views.sign_index),
+    url(r'^sign_index_action/(?P<event_id>[0-9]+)/$', views.sign_index_action),#点到动作跳转
+    url(r'^logout/', views.logout)
 
 ]
